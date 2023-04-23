@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9b-zp-70X">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Details View Controller-->
+        <scene sceneID="FUL-T7-9p7">
+            <objects>
+                <viewController id="8uW-Z9-6d4" customClass="DetailsViewController" customModule="Simpsons_Characters_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nmD-2S-mR4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76a-QV-gjX">
+                                <rect key="frame" x="16" y="379" width="361" height="384"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yB6-0L-E5g">
+                                <rect key="frame" x="76" y="118" width="240" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yB6-0L-E5g" secondAttribute="height" multiplier="12:11" id="qli-J8-wan"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DRo-wK-2hg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="76a-QV-gjX" firstAttribute="leading" secondItem="DRo-wK-2hg" secondAttribute="leading" constant="16" id="AvC-A2-f8a"/>
+                            <constraint firstItem="76a-QV-gjX" firstAttribute="top" secondItem="yB6-0L-E5g" secondAttribute="bottom" constant="41" id="NT6-oF-oAJ"/>
+                            <constraint firstItem="yB6-0L-E5g" firstAttribute="leading" secondItem="DRo-wK-2hg" secondAttribute="leading" constant="76" id="ZvG-sm-gXx"/>
+                            <constraint firstItem="yB6-0L-E5g" firstAttribute="top" secondItem="DRo-wK-2hg" secondAttribute="top" constant="15" id="g8p-FS-Kgp"/>
+                            <constraint firstItem="DRo-wK-2hg" firstAttribute="trailing" secondItem="yB6-0L-E5g" secondAttribute="trailing" constant="77" id="gN2-S1-xca"/>
+                            <constraint firstItem="DRo-wK-2hg" firstAttribute="trailing" secondItem="76a-QV-gjX" secondAttribute="trailing" constant="16" id="iuV-pw-iK2"/>
+                            <constraint firstItem="DRo-wK-2hg" firstAttribute="bottom" secondItem="76a-QV-gjX" secondAttribute="bottom" constant="55" id="jWj-9D-p9h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="yB6-0L-E5g" id="b6I-Cg-Ybx"/>
+                        <outlet property="webView" destination="76a-QV-gjX" id="qRf-jl-v6x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7O-tx-g6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338.16793893129767" y="496.47887323943667"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="R5J-kt-WyH">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="ky6-5m-aWE" customClass="MasterViewController" customModule="Simpsons_Characters_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2P1-2S-n3n">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="oy9-P7-fSO" style="IBUITableViewCellStyleDefault" id="PZl-fw-ZKn">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PZl-fw-ZKn" id="eYx-9I-lU1">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oy9-P7-fSO">
+                                            <rect key="frame" x="20" y="0.0" width="334.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8uW-Z9-6d4" kind="showDetail" identifier="showDetails" id="iwH-YG-xa0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ky6-5m-aWE" id="od0-JP-pUT"/>
+                            <outlet property="delegate" destination="ky6-5m-aWE" id="aKE-wx-Bo3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="KqR-GU-Fkj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H91-gj-PSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="-210"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Oz-Je-xEZ">
+            <objects>
+                <navigationController id="dii-bf-Sah" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lxc-NI-OCY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ky6-5m-aWE" kind="relationship" relationship="rootViewController" id="42t-HJ-tho"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvZ-47-PuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-210"/>
+        </scene>
+        <!--Simpson Character Viewer-->
+        <scene sceneID="E2j-Dm-lMn">
+            <objects>
+                <splitViewController title="Simpson Character Viewer" modalPresentationStyle="fullScreen" allowDoubleColumnStyle="YES" preferredDisplayMode="beside" behavior="tile" primaryBackgroundStyle="sidebar" id="J9b-zp-70X" customClass="SplitViewController" customModule="Simpsons_Characters_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="dii-bf-Sah" kind="relationship" relationship="masterViewController" id="8xR-Tq-E1S"/>
+                        <segue destination="8uW-Z9-6d4" kind="relationship" relationship="detailViewController" id="rWA-QC-htX"/>
+                        <segue destination="dii-bf-Sah" kind="relationship" relationship="compactViewController" id="4mI-Mw-2c9"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeB-yG-sVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1242" y="93"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8xR-Tq-E1S"/>
+        <segue reference="iwH-YG-xa0"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
